@@ -1,10 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-terraform {
-  experiments = [ unknown_instances ]
-}
-
 # Create an EC2 instance running Ubuntu in each subnet
 resource "aws_instance" "example" {
   for_each = var.network.private_subnet_ids
